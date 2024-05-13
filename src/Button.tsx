@@ -1,3 +1,5 @@
+import { ComponentPropsWithoutRef } from "react";
+
 const convertCurrency = (amount: number, currency: string): string => {
 	return "test";
 };
@@ -18,15 +20,25 @@ const convertCurrency = (amount: number, currency: string): string => {
 // 	count: number;
 // }
 
-type TButtonProps = {
-	style: React.CSSProperties;
-	borderRadius?: Record<string, number>;
-	onClick?: () => number;
-	// children: JSX.Element;
-	children: React.ReactNode;
-	count: number;
-	setCount: React.Dispatch<React.SetStateAction<number>>;
+type TButtonProps =
+	// ComponentPropsWithoutRef<"button">;
+	{
+		style: React.CSSProperties;
+		borderRadius?: Record<string, number>;
+		onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => number;
+		// children: JSX.Element;
+		children: React.ReactNode;
+		count: number;
+		setCount: React.Dispatch<React.SetStateAction<number>>;
+	};
+
+type SuperButtonProps = TButtonProps & {
+	size: "md" | "lg";
 };
+
+// interface SuperButtonProps extends TButtonProps {
+// 	size: "md" | "lg";
+// };
 
 const Button = ({
 	style,
@@ -43,7 +55,7 @@ const Button = ({
 	return (
 		<div>
 			<button
-				onClick={() => setCount((prevState) => prevState + 1)}
+				onClick={(e) => setCount((prevState) => prevState + 1)}
 				style={style}>
 				{children}
 			</button>
