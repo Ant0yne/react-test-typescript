@@ -4,7 +4,7 @@ import Button from "./Button";
 function App() {
 	return (
 		<div>
-			<Button />
+			<Button backGroundColor="red" fontSize={50} pillShape={true} />
 		</div>
 	);
 }
