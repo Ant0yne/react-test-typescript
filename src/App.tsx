@@ -4,7 +4,15 @@ import "./App.css";
 import Button from "./Button";
 
 function App() {
+	type User = {
+		name: string;
+		age: number;
+	};
+
 	const [count, setCount] = useState(0);
+	const [user, setUser] = useState<User | null>(null);
+
+	const name = user?.name;
 
 	const onClick = () => {
 		return 5;
