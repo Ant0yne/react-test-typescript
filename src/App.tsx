@@ -1,7 +1,11 @@
+import { useState } from "react";
+
 import "./App.css";
 import Button from "./Button";
 
 function App() {
+	const [count, setCount] = useState(0);
+
 	const onClick = () => {
 		return 5;
 	};
@@ -20,8 +24,11 @@ function App() {
 					bottomLeft: 10,
 					bottomRight: 10,
 				}}
-				onClick={onClick}>
-				I am a button
+				// onClick={onClick}
+				count={count}
+				setCount={setCount}>
+				<p>I am a button</p>
+				{/* Text */}
 			</Button>
 		</div>
 	);
