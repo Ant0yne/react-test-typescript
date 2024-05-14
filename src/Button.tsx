@@ -36,6 +36,8 @@ type SuperButtonProps = TButtonProps & {
 	size: "md" | "lg";
 };
 
+const buttonTextOptions = ["Click here", "Click", "Press here"] as const;
+
 // interface SuperButtonProps extends TButtonProps {
 // 	size: "md" | "lg";
 // };
@@ -58,6 +60,7 @@ const Button = ({
 				onClick={(e) => setCount((prevState) => prevState + 1)}
 				style={style}>
 				{children}
+				{buttonTextOptions.map((elem) => null)}
 			</button>
 			<p>{count}</p>
 		</div>
