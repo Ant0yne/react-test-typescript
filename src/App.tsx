@@ -7,7 +7,10 @@ function App() {
 	type User = {
 		name: string;
 		age: number;
+		sessionId: string;
 	};
+
+	type Guest = Omit<User, "name" | "age">;
 
 	const [count, setCount] = useState(0);
 	const [user, setUser] = useState<User | null>(null);
