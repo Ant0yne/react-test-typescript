@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef } from "react";
+import { type Color } from "./lib/types";
 
 const convertCurrency = (amount: number, currency: string): string => {
 	return "test";
@@ -30,6 +31,7 @@ type TButtonProps =
 		children: React.ReactNode;
 		count: number;
 		setCount: React.Dispatch<React.SetStateAction<number>>;
+		color: Color;
 	};
 
 type SuperButtonProps = TButtonProps & {

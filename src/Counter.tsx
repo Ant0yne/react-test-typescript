@@ -1,3 +1,5 @@
+import { type Color } from "./lib/types";
+
 type CounterProps<T> = {
 	countValue: T;
 	countHistory: T[];
