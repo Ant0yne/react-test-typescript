@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import "./App.css";
 import Button from "./Button";
+import Counter from "./Counter";
 
 function App() {
 	type User = {
@@ -41,6 +42,7 @@ function App() {
 				<p>I am a button</p>
 				{/* Text */}
 			</Button>
+			<Counter countValue={5} countHistory={[4, 3, 2, 1]} />
 		</div>
 	);
 }

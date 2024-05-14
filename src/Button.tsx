@@ -38,6 +38,14 @@ type SuperButtonProps = TButtonProps & {
 
 const buttonTextOptions = ["Click here", "Click", "Press here"] as const;
 
+const convertToArray = <T,>(value: T): T[] => {
+	return [value];
+};
+
+function convertToArrayClean<T>(value: T): T[] {
+	return [value];
+}
+
 // interface SuperButtonProps extends TButtonProps {
 // 	size: "md" | "lg";
 // };
